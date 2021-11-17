@@ -1,6 +1,6 @@
-## Electron + TypeScript + React
+### Fpf challenge: BitTime clock interface
 
-Boilerplate for a project using Electron, React and Typescript.
+A interface build with react, typescript, socket.io and styled-components that show time coming from a atomic clock
 
 ## Installation
 
@@ -12,12 +12,17 @@ yarn
 
 ## Usage
 
+You will need the api in this link: 
+
+```bash
+(https://github.com/ojcarlos/desafio_fpf_api)
+```
+
 Just run `start` script.
 
 ```bash
 yarn start
 ```
-
 ## Packaging
 
 To generate the project package based on the OS you're running on, just run:
