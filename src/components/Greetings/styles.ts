@@ -17,17 +17,22 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  button {
-    margin-top: 24px;
-  }
 `
 
-export const Image = styled.img`
-  width: 240px;
-  animation: ${rotate} 15s linear infinite;
+export const Hour = styled.h1`
+  font-size: 30vh
+  
 `
 
 export const Text = styled.p`
   margin-top: 24px;
   font-size: 18px;
+`
+export const ContainerButton = styled.div`
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 24px;
+
+
 `
