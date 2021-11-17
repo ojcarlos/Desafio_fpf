@@ -15,10 +15,10 @@ yarn
 You will need the api in this link: 
 
 ```bash
-(https://github.com/ojcarlos/desafio_fpf_api)
+https://github.com/ojcarlos/desafio_fpf_api
 ```
 
-Just run `start` script.
+After run the api, just run `start` script.
 
 ```bash
 yarn start
@@ -35,6 +35,4 @@ yarn package
 
 Pull requests are always welcome 😃.
 
-## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
