@@ -1,8 +1,8 @@
-import { SetStateAction, useState } from 'react';
+import {  useState } from 'react';
 import { Button } from '../Button'
 import { Container, Hour, Text, ContainerButton} from './styles'
 import io from 'socket.io-client'
-import { useEffect } from 'hoist-non-react-statics/node_modules/@types/react';
+
 
 export function Greetings() {
   
@@ -15,10 +15,6 @@ export function Greetings() {
   const socket = io("http://localhost:3333")
 
   function handleRequest() {
-    
-    setRequestAllow(false);
-    setLockAllow(true);
-    setUnlockAllow(false);
     socket.emit("access", {
       "command": "RequestAccess",
        "payload": {
@@ -27,10 +23,6 @@ export function Greetings() {
   }
 
   function handleLock() {
-    window.Main.sendMessage('Hello World - lock');
-    setRequestAllow(false);
-    setLockAllow(false);
-    setUnlockAllow(true);
     setStatus("Lock");
     socket.emit("lock", {
       "command": "RequestLock",
@@ -41,11 +33,6 @@ export function Greetings() {
   }
 
   function handleUnlock() {
-    window.Main.sendMessage('Hello World - unlock');
-    setRequestAllow(true);
-    setLockAllow(true);
-    setUnlockAllow(false);
-    setStatus("Unlock");
     socket.emit("unlock", {
       "command": "UnlockService",
        "payload": {
@@ -60,7 +47,6 @@ export function Greetings() {
       setRequestAllow(false);
       setLockAllow(true);
       setUnlockAllow(false);
-      setStatus("Lock");
     }
   } )
 
@@ -81,11 +67,11 @@ export function Greetings() {
   } )
 
   socket.on("unlockOK", (data) =>{
-    if (data.reponse === "RequestUnlockOk"){
+    if (data.response === "RequestUnlockOk"){
       setRequestAllow(false);
       setLockAllow(true);
       setUnlockAllow(false);
-      setStatus("Lock");
+      setStatus("unLock");
     }
   } )
 
@@ -107,11 +93,10 @@ export function Greetings() {
       <Text>id: {id}</Text>
       <Text>System: {status}</Text>
       <ContainerButton>
-        <Button onClick={handleRequest} able={requestAllow}>Request Access</Button>
+        <Button onClick={handleRequest} able={requestAllow}>Request Access!!!</Button>
         <Button onClick={handleLock} able={lockAllow}>Lock Service</Button>
         <Button onClick={handleUnlock} able={unlockAllow}>Unlock Service</Button>
       </ContainerButton>
     </Container>
   )
 }
- 
